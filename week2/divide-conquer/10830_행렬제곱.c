@@ -5,16 +5,14 @@ int			n;
 long long	b; // b의 범위를 고려하지 않음
 
 void	matrix_multiplication(
-		const int mat_a[5][5],
-		const int mat_b[5][5],
-		int mat_c[5][5])
+		const int mat_a[5][5], const int mat_b[5][5], int mat_c[5][5])
 {
 	for (int i = 0 ; i < n ; i++)
 	{
 		for (int j = 0 ; j < n ; j++)
 		{
 			mat_c[i][j] = 0;
-			for (int k = 0 ; k < n ; k++)
+			for (int  k = 0 ; k < n ; k++)
 			{
 				mat_c[i][j] += (mat_a[i][k] * mat_b[k][j]) % 1000;
 			}

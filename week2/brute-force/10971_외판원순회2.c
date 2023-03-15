@@ -6,7 +6,7 @@ int	n;
 int	cost_matrix[20][20];
 int min_cost = INT_MAX;
 
-void	travel_cities(int start_pos, int cur_pos, int cost, bool visited[10], int depth)
+void	travel_cities(int start_pos, int cur_pos, int cost, bool visited[10])
 {
 
 	bool	is_done;
@@ -21,7 +21,7 @@ void	travel_cities(int start_pos, int cur_pos, int cost, bool visited[10], int d
 		{
 			visited[i] = true;
 			cost += cost_matrix[cur_pos][i];
-			travel_cities(start_pos, i, cost, visited, depth);
+			travel_cities(start_pos, i, cost, visited);
 			visited[i] = false;
 			cost -= cost_matrix[cur_pos][i];
 		}
@@ -52,7 +52,7 @@ int	main(void)
 		for (int j = 0 ; j < n ; j++)
 			visited[j] = false;
 		visited[i] = true;
-		travel_cities(i, i, 0, visited, 0);
+		travel_cities(i, i, 0, visited);
 	}
 	printf("%d\n", min_cost);
 }

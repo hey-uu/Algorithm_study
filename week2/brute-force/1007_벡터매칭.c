@@ -52,6 +52,9 @@ void	get_min_sum(int sum_x, int sum_y, int depth, int cur_idx)
 {
 	if (depth == 0)
 	{
+		// pow와 sqrt를 최대한 사용하지 말자.
+		// pow는 직접 구현(특히 int인 경우)
+		// sqrt 들고 다니지 말고 나중에 출력하기 전에 sqrt 씌워주기
 		double	sum = sqrt(pow(sum_x, 2) + pow(sum_y, 2));
 
 		if (min_sum == -1 || min_sum > sum)

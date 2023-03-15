@@ -6,7 +6,6 @@ char	image[64][65];
 
 void	compress_image(int x, int y, int n);
 
-
 void	compress_image_partition(int x, int y, int half)
 {
 	bool	is_same;
